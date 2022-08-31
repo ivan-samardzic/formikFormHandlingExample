@@ -56,9 +56,10 @@ const SignupForm = () => {
             name="email"
             type="email"
             onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
             value={formik.values.email}
           />
-          {formik.errors.email && (
+          {formik.touched.email && formik.errors.email && (
             <div className={"text-danger"}>{formik.errors.email}</div>
           )}
         </div>
@@ -79,9 +80,10 @@ const SignupForm = () => {
             name="firstName"
             type="text"
             onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
             value={formik.values.firstName}
           />
-          {formik.errors.firstName && (
+          {formik.touched.firstName && formik.errors.firstName && (
             <div className={"text-danger"}>{formik.errors.firstName}</div>
           )}
         </div>
@@ -101,9 +103,10 @@ const SignupForm = () => {
             name="lastName"
             type="text"
             onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
             value={formik.values.lastName}
           />
-          {formik.errors.lastName && (
+          {formik.touched.lastName && formik.errors.lastName && (
             <div className={"text-danger"}>{formik.errors.lastName}</div>
           )}
         </div>
