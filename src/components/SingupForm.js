@@ -1,8 +1,9 @@
 import React from "react";
 import { useFormik } from "formik";
+import * as Yup from "yup";
 
 const SignupForm = () => {
-  const validate = (values) => {
+  /* const validate = (values) => {
     const errors = {};
     if (!values.firstName) {
       errors.firstName = "Required";
@@ -21,7 +22,7 @@ const SignupForm = () => {
     }
 
     return errors;
-  };
+  }; */
 
   const formik = useFormik({
     initialValues: {
@@ -29,11 +30,17 @@ const SignupForm = () => {
       lastName: "",
       email: "",
     },
-    validate,
+    validationSchema: Yup.object({
+      firstName: Yup.string().required("Required"),
+      lastName: Yup.string().required("Required"),
+      email: Yup.string().email("Invalid email address").required("Required"),
+    }),
     onSubmit: (values) => {
       console.log(JSON.stringify(values, null, 2));
     },
   });
+
+  const { getFieldProps } = formik;
 
   return (
     <form
@@ -51,14 +58,7 @@ const SignupForm = () => {
           Email Address
         </label>
         <div className={"d-flex flex-column align-items-start"}>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.email}
-          />
+          <input id="email" type="email" {...getFieldProps("email")} />
           {formik.touched.email && formik.errors.email && (
             <div className={"text-danger"}>{formik.errors.email}</div>
           )}
@@ -75,14 +75,7 @@ const SignupForm = () => {
           First Name
         </label>
         <div className={"d-flex flex-column align-items-start"}>
-          <input
-            id="firstName"
-            name="firstName"
-            type="text"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.firstName}
-          />
+          <input id="firstName" type="text" {...getFieldProps("firstName")} />
           {formik.touched.firstName && formik.errors.firstName && (
             <div className={"text-danger"}>{formik.errors.firstName}</div>
           )}
@@ -98,14 +91,7 @@ const SignupForm = () => {
           Last Name
         </label>
         <div className={"d-flex flex-column align-items-start"}>
-          <input
-            id="lastName"
-            name="lastName"
-            type="text"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.lastName}
-          />
+          <input id="lastName" type="text" {...getFieldProps("lastName")} />
           {formik.touched.lastName && formik.errors.lastName && (
             <div className={"text-danger"}>{formik.errors.lastName}</div>
           )}
