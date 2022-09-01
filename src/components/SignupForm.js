@@ -13,6 +13,10 @@ const SignupForm = () => {
         firstName: Yup.string().required("Required"),
         lastName: Yup.string().required("Required"),
         email: Yup.string().email("Invalid email address").required("Required"),
+        jobType: Yup.string().required("Required"),
+        acceptedTerms: Yup.bool()
+          .required("The terms must be accepted.")
+          .oneOf([true], "The terms must be accepted."),
       })}
       onSubmit={(values) => {
         console.log(JSON.stringify(values, null, 2));
