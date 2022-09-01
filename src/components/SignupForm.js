@@ -1,5 +1,5 @@
 import React from "react";
-import { Formik, Field, Form, ErrorMessage } from "formik";
+import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import CustomTextField from "./CustomTextField";
 import CustomSelect from "./CustomSelect";
@@ -18,10 +18,7 @@ const SignupForm = () => {
         console.log(JSON.stringify(values, null, 2));
       }}
     >
-      <Form
-        className="form-inline d-flex flex-column justify-content-center align-items-center p-5"
-        style={{ backgroundColor: "#efefef", borderRadius: "8px" }}
-      >
+      <Form className="form-inline form-style">
         <CustomTextField
           label="First Name"
           name="firstName"
@@ -55,16 +52,7 @@ const SignupForm = () => {
           <p className={"mt-3 ml-2"}>I accept the terms and conditions</p>
         </CustomCheckbox>
 
-        <button
-          type="submit"
-          className="btn m-2 w-100"
-          style={{
-            padding: "16px 24px",
-            borderRadius: "24px",
-            backgroundColor: "#0037AD",
-            color: "white",
-          }}
-        >
+        <button type="submit" className="btn m-2 w-100 button-style">
           Submit
         </button>
       </Form>

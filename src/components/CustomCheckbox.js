@@ -8,16 +8,7 @@ const CustomCheckbox = ({ children, ...props }) => {
   });
   return (
     <div className="d-flex flex-row align-items-center">
-      <label
-        className="checkbox-input"
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "space-between",
-          width: "auto",
-        }}
-      >
+      <label className="checkbox-input label-style">
         <input type="checkbox" {...getFieldProps} {...props} />
         {children}
       </label>

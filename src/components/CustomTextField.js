@@ -17,14 +17,11 @@ const CustomTextField = ({ label, ...props }) => {
         {label}
       </label>
       <input
-        className="text-input"
+        className="text-input input-style"
         {...getFieldProps}
         {...props}
         style={{
-          width: "280px",
-          padding: "16px 24px",
           border: `1px solid ${getFieldMeta.error ? "red" : "#0037AD"}`,
-          borderRadius: "24px",
         }}
       />
       {getFieldMeta.touched && getFieldMeta.error && (

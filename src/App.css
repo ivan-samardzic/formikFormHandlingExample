@@ -1,0 +1,69 @@
+.screen {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.form-style {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #efefef;
+  border-radius: 8px;
+}
+
+.button-style {
+  padding: 16px 24px;
+  border-radius: 24px;
+  background-color: #0037ad;
+  color: white;
+}
+
+.label-style {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: auto;
+}
+
+.checkbox-label-style {
+  display: block;
+  text-align: left;
+}
+
+.input-style {
+  width: 280px;
+  padding: 12px 20px;
+  border-radius: 24px;
+}
+
+.header-style {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 4px;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+}
+
+.title-style {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+  justify-content: center;
+  align-content: center;
+  margin: 0px 8px;
+}
+
+.title-style-text {
+  width: auto;
+  font-size: 1em;
+  align-content: center;
+}

@@ -7,12 +7,7 @@ const CustomSelect = ({ label, ...props }) => {
     <div className="w-100 d-flex p-2 align-items-center flex-column">
       <label
         htmlFor={props.id || props.name}
-        className={"p-2"}
-        style={{
-          minWidth: "auto",
-          display: "block",
-          textAlign: "left",
-        }}
+        className={"p-2 label-style checkbox-label-style"}
       >
         {label}
       </label>
